@@ -1,52 +1,25 @@
 
-Android Studio 工程，如果需要使用Eclipse 请自行新建工程，并拷贝相关源文件到工程
+#轻牛 蓝牙SDK 安卓版
 
-onCompete方法的返回值说明
-```java
-/**
- * 执行成功
- */
-int QN_SUCCESS = 0;
-/**
- * APPID失效
- */
-int QN_UNAVAILABLE_APP_ID = 1;
-/**
- * 网络没开
- */
-int QN_NETWORK_CLOSED = 2;
-/**
- * 网络超时
- */
-int QN_NETWORK_TIMEOUT = 3;
-/**
- * 没有底功耗蓝牙(蓝牙4.0及以上)
- */
-int QN_NO_BLE = 4;
-/**
- * 蓝牙错误
- */
-int QN_BLE_ERROR = 5;
-/**
- * 蓝牙版本太低
- */
-int QN_BLE_LOW_VERSION = 6;
-/**
- * 蓝牙未开启
- */
-int QN_BLE_CLOSED = 7;
+集成该 SDK,可以使用 伊欧乐公司旗下几乎所有的智能人体秤
 
-/**
- * SDK的版本过低
- */
-int QN_BLE_LOW_SDK_VERSION = 8;
-```
+如需使用 IOS 版,请点击 [这里](../qn-ble-sdk-ios)
+
+Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝相关源文件到工程
+
+## 最新版本 `2.2` [下载地址](../../releasees/download/2.2/libs.zip)
+* 提高 AppId 校验的成功率
+* 提高轻牛设备型号的识别率
+
+[所有版本](../../releasees)
+
+##集成方法
 
 1. 把Demo导入到 AS 后，请拷贝最新的SDK jar包和so文到lib目录
   * jar包文件名为 qn-ble-api-x.x.jar
   * so文件名为 libyolanda_calc.so,SDK 提供8种CPU架构的so库，可根据自己的项目情况选择
   
-* 在 Application种初始化轻牛的SDK
+2. 在 Application种初始化轻牛的SDK
 ```java
 /**
  * 初始化轻牛SDK,仅在Application中的 onCreate中调用，保证每次app实例都只调用一次。调用这个方法时，尽量要联网
@@ -63,7 +36,7 @@ int QN_BLE_LOW_SDK_VERSION = 8;
 });
 ```
 
-* 调用 startLeScan 启动蓝牙扫描
+3. 调用 startLeScan 启动蓝牙扫描
 ```java
 /**
  * @param deviceName 蓝牙设备的蓝牙名，如果不为空则扫描只扫描指定蓝牙名的设备，为空则不限定
@@ -80,7 +53,7 @@ QNApiManager.getApi(this).startLeScan(null,null,new new QNBleScanCallback() {
 });
 ```
 
-* 连接扫描到的回调设备QNBleDevice
+4. 连接扫描到的回调设备QNBleDevice
 
 ```java
 /**
@@ -140,3 +113,58 @@ QNApiManager.getApi(this).connectDevice(device, "userId", 170, 1, birthday, new 
     void onReceivedStoreData(QNBleDevice bleDevice, List<QNData> datas);
 });
 ```
+
+### onCompete方法的返回值说明
+
+```java
+/**
+ * 执行成功
+ */
+int QN_SUCCESS = 0;
+/**
+ * APPID失效
+ */
+int QN_UNAVAILABLE_APP_ID = 1;
+/**
+ * 网络没开
+ */
+int QN_NETWORK_CLOSED = 2;
+/**
+ * 网络超时
+ */
+int QN_NETWORK_TIMEOUT = 3;
+/**
+ * 没有底功耗蓝牙(蓝牙4.0及以上)
+ */
+int QN_NO_BLE = 4;
+/**
+ * 蓝牙错误
+ */
+int QN_BLE_ERROR = 5;
+/**
+ * 蓝牙版本太低
+ */
+int QN_BLE_LOW_VERSION = 6;
+/**
+ * 蓝牙未开启
+ */
+int QN_BLE_CLOSED = 7;
+
+/**
+ * SDK的版本过低
+ */
+int QN_BLE_LOW_SDK_VERSION = 8;
+```
+
+## 注意事项
+
+* 测试版 APPID：123456789，测试版版本的服务器可能会不稳定
+* 使用**测试版APPID**调试成功后，请切换到**发布**模式，并使用**正式的APPID**上线
+* **正式的APPID** 由轻牛公司统一分配
+* SDK中有方法可以指定测试或发布模式
+
+===================================================
+
+如有使用问题,请先查阅文档,如果对 API 有疑问,请先查阅 **api** 目录中的 API使用文档
+
+如果还是无法解决,请 email: huangdunren@yolanda.hk 或者直接在QQ，微信的SDK技术讨论组中咨询
