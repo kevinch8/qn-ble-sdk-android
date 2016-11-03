@@ -3,7 +3,7 @@
 
 集成该 SDK,可以使用 伊欧乐公司旗下几乎所有的智能人体秤
 
-如需使用 IOS 版,请点击 [这里](../../qn-ble-sdk-ios)
+如需使用 IOS 版,请点击 [这里](../../../qn-ble-sdk-ios)
 
 Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝相关源文件到工程
 
