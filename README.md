@@ -7,9 +7,8 @@
 
 Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝相关源文件到工程
 
-## 最新版本 `2.2` [下载地址](../../releases/download/2.2/qn-ble-sdk-android-2.2.zip)
-* 提高 AppId 校验的成功率
-* 提高轻牛设备型号的识别率
+## 最新版本 `2.3` [下载地址](../../releases/download/2.3/qn-ble-sdk-android-2.3.zip)
+* 增加了几款新型号
 
 [所有版本](../../releases)
 
