@@ -10,9 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import com.hdr.yolanda.kingnewblesdk.app.R;
 import com.kitnew.ble.QNData;
 import com.kitnew.ble.QNItemData;
+import com.kitnew.ble.utils.QNLog;
 
 public class IndicatorAdapter extends RecyclerView.Adapter<IndicatorAdapter.IndicatorViewHolder> {
 
@@ -57,6 +59,7 @@ public class IndicatorAdapter extends RecyclerView.Adapter<IndicatorAdapter.Indi
 
         void init(QNItemData itemData) {
             nameTv.setText(itemData.name);
+            QNLog.log("he", itemData.name + "   " + itemData.value);
             if (itemData.type == QNData.TYPE_BODY_SHAPE) {
                 valueTv.setText(itemData.valueStr);
             } else {

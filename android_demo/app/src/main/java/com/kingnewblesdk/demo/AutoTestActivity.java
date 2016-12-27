@@ -16,6 +16,7 @@ import android.widget.*;
 
 import com.hdr.yolanda.kingnewblesdk.app.R;
 import com.kitnew.ble.*;
+import com.kitnew.ble.utils.QNLog;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -192,6 +193,7 @@ public class AutoTestActivity extends AppCompatActivity implements View.OnClickL
     public void onReceivedData(QNBleDevice bleDevice, QNData data) {
         // 把秤的型号参数也显示出来
         statusTv.setText("测量完成");
+        QNLog.log("he", data.getUserId() + "   ");
         indicatorAdapter.setQnData(data);
     }
 

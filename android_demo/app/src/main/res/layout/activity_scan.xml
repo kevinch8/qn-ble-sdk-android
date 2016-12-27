@@ -1,102 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
-            android:id="@+id/infoBar1"
-            android:orientation="horizontal"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:gravity="center_vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <TextView
-                android:text="id:"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        <EditText
-                android:id="@+id/idEt"
-                android:text="hdr"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"/>
+        android:id="@+id/infoBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp">
 
         <TextView
-                android:text="身高:"
-                android:layout_marginStart="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="id:" />
+
         <EditText
-                android:id="@+id/heightEt"
-                android:inputType="number"
-                android:maxLength="3"
-                android:text="170"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"/>
-        <TextView
-                android:text="cm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            android:id="@+id/idEt"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="hdr" />
 
         <TextView
-                android:text="性别"
-                android:layout_marginStart="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="身高:" />
+
+        <EditText
+            android:id="@+id/heightEt"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="3"
+            android:text="170" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cm" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="性别" />
+
         <RadioGroup
-                android:id="@+id/sexRG"
-                android:orientation="horizontal"
+            android:id="@+id/sexRG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/sexMan"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="男" />
+
             <RadioButton
-                    android:text="男"
-                    android:id="@+id/sexMan"
-                    android:checked="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            <RadioButton
-                    android:id="@+id/sexWoman"
-                    android:text="女"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                android:id="@+id/sexWoman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="女" />
         </RadioGroup>
     </LinearLayout>
+
     <LinearLayout
-            android:id="@+id/infoBar2"
-            android:layout_below="@id/infoBar1"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        android:id="@+id/infoBar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/infoBar1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp">
+
         <TextView
-                android:id="@+id/birthdayTv"
-                android:text="生日"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            android:id="@+id/birthdayTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="生日" />
 
         <EditText
-                android:id="@+id/birthdayEt"
-                android:hint="YYYY-M-d"
-                android:text="1990-1-1"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"/>
+            android:id="@+id/birthdayEt"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="YYYY-M-d"
+            android:text="1990-1-1" />
 
         <Button
-                android:id="@+id/scanBtn"
-                android:text="开始扫描"
+            android:id="@+id/scanBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开始扫描" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/infoBar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/infoBar2"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="扫描模式" />
+
+        <RadioGroup
+            android:id="@+id/scanMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/scanModeFirst"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="首次" />
+
+            <RadioButton
+                android:id="@+id/scanModeAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="每次" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:labelFor="@+id/storageModeCb"
+            android:text="是否接收存储数据" />
+
+        <CheckBox
+            android:id="@+id/storageModeCb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true" />
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_below="@id/infoBar2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/infoBar3" />
 
 
 </RelativeLayout>

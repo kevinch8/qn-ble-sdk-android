@@ -11,8 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
+
 import com.hdr.yolanda.kingnewblesdk.app.R;
 import com.kitnew.ble.*;
+import com.kitnew.ble.utils.QNLog;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -29,9 +31,11 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
     RecyclerView recyclerView;
     Button scanBtn;
     RadioGroup sexRg;
+    RadioGroup scanModeRg;
     EditText idEt;
     EditText heightEt;
     EditText birthdayEt;
+    CheckBox storageModeCb;
 
     final List<QNBleDevice> devices = new ArrayList<>();
     DeviceListAdapter deviceListAdapter;
@@ -45,7 +49,6 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
 
         initViews();
         initApi();
-
 
     }
 
@@ -64,6 +67,9 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
         birthdayEt = (EditText) findViewById(R.id.birthdayEt);
 
         sexRg = (RadioGroup) findViewById(R.id.sexRG);
+        scanModeRg = (RadioGroup) findViewById(R.id.scanMode);
+
+        storageModeCb = (CheckBox) findViewById(R.id.storageModeCb);
     }
 
     void initApi() {
@@ -111,6 +117,9 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
         scanBtn.setText("停止扫描");
         devices.clear();
         deviceListAdapter.notifyDataSetChanged();
+        int scanMode = scanModeRg.getCheckedRadioButtonId() == R.id.scanModeFirst ? QNBleApi.SCAN_MODE_FIRST : QNBleApi.SCAN_MODE_ALL;
+        //设置扫描模式，如无特殊需要，不需要设置
+        qnBleApi.setScanMode(scanMode);
         qnBleApi.startLeScan(null, null, new QNBleScanCallback() {
             @Override
             public void onCompete(int errorCode) {
@@ -119,8 +128,8 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onScan(QNBleDevice bleDevice) {
-                Log.i("hdr-ble", "name:" + bleDevice.getDeviceName() + " mac:" + bleDevice.getMac()
-                        + "model:" + bleDevice.getModel());
+                QNLog.log("hdr-ble", "name:" + bleDevice.getDeviceName() + " mac:" + bleDevice.getMac()
+                        + " model:" + bleDevice.getModel() + " 是否开机:" + bleDevice.getDeviceState());
                 devices.add(bleDevice);
                 deviceListAdapter.notifyItemInserted(devices.size() - 1);
             }
@@ -223,12 +232,16 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
 
         @Override
         public void onClick(View v) {
+            int storageMode = storageModeCb.isChecked() ? QNBleApi.RECEIVE_STORAGE_DATA : QNBleApi.IGNORE_STORAGE_DATA;
+            //设置是否接收存储数据，如无特殊需要，不需要设置
+            qnBleApi.setReceiveOrIgnoreStorageData(storageMode);
+
             QNBleDevice device = devices.get(getAdapterPosition());
             doConnect(device);
         }
 
         void init(QNBleDevice device) {
-            nameTv.setText(device.getModel());
+            nameTv.setText(device.getModel() + (device.getDeviceState() == QNBleDevice.DEVICE_STATE_ON ? "开机" : "关机"));
             macTv.setText(device.getMac());
         }
     }
