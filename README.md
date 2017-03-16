@@ -7,8 +7,9 @@
 
 Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝相关源文件到工程
 
-## 最新版本 `2.5` [下载地址](../../releases/download/2.5/qn-ble-sdk-android-2.5.zip)
+## 最新版本 `2.6` [下载地址](../../releases/download/2.6/qn-ble-sdk-android-2.6.zip)
 增加高级指标 分数
+优化性能
 
 [所有版本](../../releases)
 
