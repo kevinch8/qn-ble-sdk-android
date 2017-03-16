@@ -7,42 +7,8 @@
 
 Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝相关源文件到工程
 
-## 最新版本 `2.4` [下载地址](../../releases/download/2.4/qn-ble-sdk-android-2.4.zip)
-* 增加扫描设备对象(`QNBleDevice`)中是否已开机的方法 
-```java
-com.kitnew.ble.QNBleDevice
-/**
- * 返回设备是否已关机
- *
- * @return {@link QNBleDevice#DEVICE_STATE_OFF} 是关机，{@link QNBleDevice#DEVICE_STATE_ON} 是 开机
- */
-int getDeviceState();
-
-```
-
-* 增加设置扫描模式的方法
-```java
-com.kitnew.ble.QNBleApi
-/**
- * 设置扫描模式,重新扫描生效
- *
- * @param scanMode 参考 {@link #SCAN_MODE_FIRST} ,{@link #SCAN_MODE_FIRST}
- */
-void setScanMode(int scanMode);
-
-```
-
-* 增加设置是否接收存储数据的方法
-```java
-com.kitnew.ble.QNBleApi
-/**
- * 设置是否接收存储数据，重新连接生效
- *
- * @param mode 参考 {@link #RECEIVE_STORAGE_DATA} ,{@link #IGNORE_STORAGE_DATA}
- */
-void setReceiveOrIgnoreStorageData(int mode);
-
-```
+## 最新版本 `2.5` [下载地址](../../releases/download/2.5/qn-ble-sdk-android-2.5.zip)
+增加高级指标 分数
 
 [所有版本](../../releases)
 
