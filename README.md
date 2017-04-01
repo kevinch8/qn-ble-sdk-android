@@ -1,6 +1,8 @@
 
 #轻牛 蓝牙SDK 安卓版
 
+[Document in English](/YolandaQingniu/qn-ble-sdk-android/master/README_en.md)
+
 集成该 SDK,可以使用 伊欧乐公司旗下几乎所有的智能人体秤
 
 如需使用 IOS 版,请点击 [这里](../../../qn-ble-sdk-ios)
@@ -18,7 +20,7 @@ Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝
 1. 把Demo导入到 AS 后，请拷贝最新的SDK jar包和so文到lib目录
   * jar包文件名为 qn-ble-api-x.x.jar
   * so文件名为 libyolanda_calc.so,SDK 提供8种CPU架构的so库，可根据自己的项目情况选择
-  
+
 2. 在 Application种初始化轻牛的SDK
 ```java
 /**
@@ -43,9 +45,9 @@ Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝
  * @param mac        蓝牙设备的mac地址，如果不为空则扫描只扫描指定mac地址的设备，为空则不限定
  * @param callback   扫描到蓝牙设备后回调的接口
  **/
-QNApiManager.getApi(this).startLeScan(null,null,new new QNBleScanCallback() { 
+QNApiManager.getApi(this).startLeScan(null,null,new new QNBleScanCallback() {
   //如果失败，会在这个方法中返回错误码
-  public void onCompete(int errorCode) { 
+  public void onCompete(int errorCode) {
   }
   //如果扫描到设备，会在这个方法返回这个设备的相关信息,一个设备只返回一次
   public void onScan(QNBleDevice bleDevice) {
