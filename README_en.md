@@ -1,31 +1,31 @@
 
-#Yoland Bluetooth SDK Android Version
+# Yolanda Bluetooth SDK Android Version
 
 You can use most of yolanda company's scale after integration of this SDK successfully
 
-If you need IOS version,please click [here](../../../qn-ble-sdk-ios) file 
+If you need IOS version, please click [here](../../../qn-ble-sdk-ios) file
 
-Android Studio project, please build new project and copy the related soruce files into it if you need use Eclipse
+Android Studio project, please build new project and copy the related source files into it if you need use Eclipse
 
 ## The newest version `2.6` [please download here](../../releases/download/2.6/qn-ble-sdk-android-2.6.zip)
 Increase advanced index   scores
 Optimize performance
 
-[All version](../../releases) 
+[All version](../../releases)
 
 ##Integration manual
 
 1. After importing the "Demo" into the "AS", please copy the latest SDK jar package and so file on to the lib directory
   * The jar package file is named qn-ble-api-x.x.jar
   * The so file is named libyolanda_calc.so, SDK provides 8 kinds of CPU architecture so library, you can choose according to your own project situation
-  
-2. Please Initialize the Yoland SDK in Application
+
+2. Please Initialize the Yolanda SDK in Application
 ```java
 /**
- * Please only call "onCreate" for just one time in Application under Internet work when Initialize the Yoland SDK
+ * Please only call "onCreate" for just one time in Application under Internet work when Initialize the Yolanda SDK
  *
  * @param  AppId appId assigned by Yolanda
- * @param  isRelease ：Whether it is release mode, if yes please setting false, and setting to ture when on line
+ * @param  isRelease ：Whether it is release mode, if yes please setting false, and setting to true when on line
  * @param  callback ： Callback execution results, yolanda will try to ensure that all cases will be a callback
  */
  QNApiManager.getApi(getApplicationContext()).initSDK("123456789", false, new QNResultCallback() {
@@ -39,27 +39,27 @@ Optimize performance
 3. Please Turn on Bluetooth scanning when call with startLeScan
 ```java
 /**
- * @param deviceName Bluetooth device name, it will only scan the specified Bluetooth name of the device if it is not empty, otherwise there is no limiti
- * @param mac        Bluetooth device mac address,it will only scan the specified Bluetooth mac address of the device if it is not empty, otherwise there is no limiti
+ * @param deviceName Bluetooth device name, it will only scan the specified Bluetooth name of the device if it is not empty, otherwise there is no limit
+ * @param mac        Bluetooth device mac address, it will only scan the specified Bluetooth mac address of the device if it is not empty, otherwise there is no limit
  * @param callback   Scan the callback port of the Bluetooth device
  **/
-QNApiManager.getApi(this).startLeScan(null,null,new new QNBleScanCallback() { 
+QNApiManager.getApi(this).startLeScan(null,null,new new QNBleScanCallback() {
   //It will return the error code if it fails
-  public void onCompete(int errorCode) { 
+  public void onCompete(int errorCode) {e
   }
-  //It will return each device's information for just one time if it scaned the device
+  //it will recall to this function if SDK scan the BLE device
   public void onScan(QNBleDevice bleDevice) {
   }
 });
 ```
 
-4. Connected with the scaned callback device QNBleDevice
+4. Connected with the scan callback device QNBleDevice
 
 ```java
 /**
  * Connect to the specified device, all the data or connection status will be callback in QNBleCall. except on the onComplete method it will callback in the main thread
  * @param bleDevice Scan the callback interface Bluetooth devices
- * @param userId    User identification,unique user,non-empty string, you can use the user name, phone number, mailbox or other identification
+ * @param userId    User identification, unique user, non-empty string, you can use the user name, phone number, mailbox or other identification
  * @param height    Height in cm
  * @param gender    Gender:  Male: 1 Female: 0
  * @param birthday  Birthday, accurate to the day
@@ -76,13 +76,13 @@ QNApiManager.getApi(this).connectDevice(device, "userId", 170, 1, birthday, new 
     /**
      * connected ,it will callback in the main thread
      *
-     * @param bleDevice 
+     * @param bleDevice
 	 Yolanda Bluetooth device
      */
     void onConnected(QNBleDevice bleDevice);
 
     /**
-     * 
+     *
 	 Disconnected from the Bluetooth connection,it will callback in the main thread
      *
      * @param bleDevice  Yolanda Bluetooth device
@@ -90,7 +90,7 @@ QNApiManager.getApi(this).connectDevice(device, "userId", 170, 1, birthday, new 
     void onDisconnected(QNBleDevice bleDevice);
 
     /**
-     * Received an unstable weight data, it will continue to be called during user starting weighing,and will callback in the main thread
+     * Received an unstable weight data, it will continue to be called during user starting weighing, and will callback in the main thread
      *
      * @param bleDevice  Yolanda Bluetooth device
      * @param weight    Unstable weight data
@@ -106,7 +106,7 @@ QNApiManager.getApi(this).connectDevice(device, "userId", 170, 1, birthday, new 
     void onReceivedData(QNBleDevice bleDevice, QNData data);
 
     /**
-     * Received the stored data,callback in the main thread
+     * Received the stored data, callback in the main thread
      *
      * @param bleDevice Yolanda Bluetooth device
      * @param datas     The stored data array(it contains multiple array),you can use {@link QNData#getUserId()} to distinguish different user's data
@@ -160,12 +160,12 @@ int QN_BLE_LOW_SDK_VERSION = 8;
 ## please note:
 
 * Testing version APPID：123456789 , the testing ver server may be unstable during testing
-* After Use ** testing version APPID **debugging successfully, please switch to ** release ** mode and use ** formal APPID ** make on line
-* **Formal APPID ** is distributed by yolanda company
+* After Use **testing version APPID** debugging successfully, please switch to **release** mode and use **formal APPID** make on line
+* **Formal APPID** is distributed by yolanda company
 * you can choose a test or release mode in SDK
 
 ===================================================
 
-If you have anyting question please refer related documents carefully, if you have any questions about API please read our API user manual first
+If you have anything question please refer related documents carefully, if you have any questions about API please read our API user manual first
 
-If still can not solve this problem please contact us for technical support, we will arrange SDK technical team to support you, thank you !
+If still can not solve this problem please contact us for technical support, we will arrange SDK technical team to support you, email: huangdunren@yolanda.hk thank you !

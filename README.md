@@ -49,7 +49,7 @@ QNApiManager.getApi(this).startLeScan(null,null,new new QNBleScanCallback() {
   //如果失败，会在这个方法中返回错误码
   public void onCompete(int errorCode) {
   }
-  //如果扫描到设备，会在这个方法返回这个设备的相关信息,一个设备只返回一次
+  //如果扫描到设备，会在这个方法返回这个设备的相关信息
   public void onScan(QNBleDevice bleDevice) {
   }
 });
@@ -161,7 +161,7 @@ int QN_BLE_LOW_SDK_VERSION = 8;
 ## 注意事项
 
 * 测试版 APPID：123456789，测试版版本的服务器可能会不稳定
-* 使用**测试版APPID**调试成功后，请切换到**发布**模式，并使用**正式的APPID**上线
+* 使用 **测试版APPID** 调试成功后，请切换到 **发布** 模式，并使用 **正式的APPID** 上线
 * **正式的APPID** 由轻牛公司统一分配
 * SDK中有方法可以指定测试或发布模式
 
