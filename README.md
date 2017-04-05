@@ -1,7 +1,7 @@
 
 #轻牛 蓝牙SDK 安卓版
 
-[Document in English](/YolandaQingniu/qn-ble-sdk-android/master/README_en.md)
+[Document in English](https://github.com/YolandaQingniu/qn-ble-sdk-android/blob/master/README_en.md)
 
 集成该 SDK,可以使用 伊欧乐公司旗下几乎所有的智能人体秤
 
