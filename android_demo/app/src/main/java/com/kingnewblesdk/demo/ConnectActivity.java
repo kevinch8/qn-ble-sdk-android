@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
 import com.hdr.yolanda.kingnewblesdk.app.R;
 import com.kitnew.ble.*;
 
@@ -119,7 +120,14 @@ public class ConnectActivity extends AppCompatActivity implements QNBleCallback 
 
     @Override
     public void onUnsteadyWeight(QNBleDevice bleDevice, float weight) {
-        weightTv.setText(weight + "kg");
+        int unit = bleApi.getWeightUnit();
+        String unitString = " kg";
+        if (unit == QNBleApi.WEIGHT_UNIT_LB) {
+            unitString = " lb";
+        } else if (unit == QNBleApi.WEIGHT_UNIT_JIN) {
+            unitString = " 斤";
+        }
+        weightTv.setText(weight + unitString);
     }
 
     @Override

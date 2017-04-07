@@ -1,21 +1,73 @@
 
-#轻牛 蓝牙SDK 安卓版
+# 轻牛 蓝牙SDK 安卓版
 
 [Document in English](https://github.com/YolandaQingniu/qn-ble-sdk-android/blob/master/README_en.md)
 
 集成该 SDK,可以使用 伊欧乐公司旗下几乎所有的智能人体秤
 
-如需使用 IOS 版,请点击 [这里](../../../qn-ble-sdk-ios)
+如需使用 IOS 版,请点击 [这里](https://github.com/YolandaQingniu/qn-ble-sdk-ios)
 
 Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝相关源文件到工程
 
-## 最新版本 `2.6` [下载地址](../../releases/download/2.6/qn-ble-sdk-android-2.6.zip)
-增加高级指标 分数
-优化性能
+## 最新版本 `2.7` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/2.6/qn-ble-sdk-android-2.7.zip)
 
-[所有版本](../../releases)
+优化 **AppId** 验证机制，因为网络不通而校验失败不会影响使用
 
-##集成方法
+增加单位的设置，支持 kg，lb，斤（有些秤不支持）
+
+Demo中有使用方法
+
+关键定义以及方法如下
+
+```java
+
+/**
+ * 重量单位，公斤(kg) 默认值
+ */
+int WEIGHT_UNIT_KG = 0;
+
+/**
+ * 重量单位，磅(lb)
+ */
+int WEIGHT_UNIT_LB = 1;
+
+/**
+ * 重量单位，斤，设置之后
+ */
+int WEIGHT_UNIT_JIN = 2;
+
+/**
+ * 设置测量单位,秤端的显示，包括所有重量数值(体重，骨量等)
+ *
+ * <p>
+ * 一些旧款的设备不支持 <strong> 斤 </strong> ,则设备端显示 kg
+ * </p>
+ *
+ * @param unit 参考 {@link #WEIGHT_UNIT_KG} ,{@link #WEIGHT_UNIT_LB} ,{@link #WEIGHT_UNIT_JIN}
+ */
+void setWeightUnit(int unit);
+
+/**
+ * 返回当前测量单位
+ *
+ * @return {@link QNBleApi#WEIGHT_UNIT_KG} ,{@link QNBleApi#WEIGHT_UNIT_LB} ,{@link QNBleApi#WEIGHT_UNIT_JIN}
+ */
+int getWeightUnit();
+
+/**
+ * 把 kg 的数值转换成 weightUnit 所设置单位的数值
+ *
+ * @param weightUnit 重量单位
+ * @return 返回指定单位的重量数值 {@link QNBleApi#WEIGHT_UNIT_KG} ,{@link QNBleApi#WEIGHT_UNIT_LB} ,{@link QNBleApi#WEIGHT_UNIT_JIN}
+ */
+float convertUnit(int weightUnit, float kgWeight);
+
+```
+
+
+[所有版本](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases)
+
+## 集成方法
 
 1. 把Demo导入到 AS 后，请拷贝最新的SDK jar包和so文到lib目录
   * jar包文件名为 qn-ble-api-x.x.jar
@@ -56,7 +108,6 @@ QNApiManager.getApi(this).startLeScan(null,null,new new QNBleScanCallback() {
 ```
 
 4. 连接扫描到的回调设备QNBleDevice
-
 ```java
 /**
  * 连接指定的设备，所有的数据或连接状态都会在QNBleCall种进行回调。除了onComplete方法外，，其它的都会在主线程进行回调

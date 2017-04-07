@@ -32,6 +32,7 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
     Button scanBtn;
     RadioGroup sexRg;
     RadioGroup scanModeRg;
+    RadioGroup unitRg;
     EditText idEt;
     EditText heightEt;
     EditText birthdayEt;
@@ -69,7 +70,38 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
         sexRg = (RadioGroup) findViewById(R.id.sexRG);
         scanModeRg = (RadioGroup) findViewById(R.id.scanMode);
 
+        unitRg = (RadioGroup) findViewById(R.id.measureUnit);
+
         storageModeCb = (CheckBox) findViewById(R.id.storageModeCb);
+
+        int unit = QNApiManager.getApi(getBaseContext()).getWeightUnit();
+        int resId = R.id.kg;
+        switch (unit) {
+            case QNBleApi.WEIGHT_UNIT_LB:
+                resId = R.id.lb;
+                break;
+            case QNBleApi.WEIGHT_UNIT_JIN:
+                resId = R.id.jin;
+                break;
+        }
+        unitRg.check(resId);
+
+        unitRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.kg:
+                        QNApiManager.getApi(getBaseContext()).setWeightUnit(QNBleApi.WEIGHT_UNIT_KG);
+                        break;
+                    case R.id.lb:
+                        QNApiManager.getApi(getBaseContext()).setWeightUnit(QNBleApi.WEIGHT_UNIT_LB);
+                        break;
+                    case R.id.jin:
+                        QNApiManager.getApi(getBaseContext()).setWeightUnit(QNBleApi.WEIGHT_UNIT_JIN);
+                        break;
+                }
+            }
+        });
     }
 
     void initApi() {

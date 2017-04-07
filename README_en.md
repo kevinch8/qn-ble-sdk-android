@@ -3,15 +3,62 @@
 
 You can use most of yolanda company's scale after integration of this SDK successfully
 
-If you need IOS version, please click [here](../../../qn-ble-sdk-ios) file
+If you need IOS version, please click [here](https://github.com/YolandaQingniu/qn-ble-sdk-ios) file
 
 Android Studio project, please build new project and copy the related source files into it if you need use Eclipse
 
-## The newest version `2.6` [please download here](../../releases/download/2.6/qn-ble-sdk-android-2.6.zip)
-Increase advanced index   scores
-Optimize performance
+## The newest version `2.7` [please download here](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/2.6/qn-ble-sdk-android-2.7.zip)
 
-[All version](../../releases)
+Support set weight unit(kg,lb,jin)
+
+The Demo project can tell you how to set weight unit.
+
+
+```java
+
+/**
+ * kg,default value
+ */
+int WEIGHT_UNIT_KG = 0;
+
+/**
+ * lb
+ */
+int WEIGHT_UNIT_LB = 1;
+
+/**
+ * jin, Chinese weight unit,half of kg
+ */
+int WEIGHT_UNIT_JIN = 2;
+
+/**
+ * set weight unit ,include all value which use weight unit,like weight
+ *
+ * <p>
+ * Scale will show kg on some old device does not support  <strong> jin </strong>
+ * </p>
+ *
+ * @param unit ref {@link #WEIGHT_UNIT_KG} ,{@link #WEIGHT_UNIT_LB} ,{@link #WEIGHT_UNIT_JIN}
+ */
+void setWeightUnit(int unit);
+
+/**
+ *
+ * @return {@link QNBleApi#WEIGHT_UNIT_KG} ,{@link QNBleApi#WEIGHT_UNIT_LB} ,{@link QNBleApi#WEIGHT_UNIT_JIN}
+ */
+int getWeightUnit();
+
+/**
+ * convert kg value to appointed unit
+ *
+ * @param weightUnit
+ * @return value of appointed unit {@link QNBleApi#WEIGHT_UNIT_KG} ,{@link QNBleApi#WEIGHT_UNIT_LB} ,{@link QNBleApi#WEIGHT_UNIT_JIN}
+ */
+float convertUnit(int weightUnit, float kgWeight);
+
+```
+
+[All version](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases)
 
 ##Integration manual
 
