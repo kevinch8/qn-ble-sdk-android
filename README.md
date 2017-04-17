@@ -9,7 +9,7 @@
 
 Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝相关源文件到工程
 
-## 最新版本 `2.7` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/2.6/qn-ble-sdk-android-2.7.zip)
+## 最新版本 `2.7` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/2.7/qn-ble-sdk-android-2.7.zip)
 
 优化 **AppId** 验证机制，因为网络不通而校验失败不会影响使用
 
