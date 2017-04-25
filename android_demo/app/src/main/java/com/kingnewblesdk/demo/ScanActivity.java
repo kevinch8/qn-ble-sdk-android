@@ -2,6 +2,7 @@ package com.kingnewblesdk.demo;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -267,9 +268,15 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
             int storageMode = storageModeCb.isChecked() ? QNBleApi.RECEIVE_STORAGE_DATA : QNBleApi.IGNORE_STORAGE_DATA;
             //设置是否接收存储数据，如无特殊需要，不需要设置
             qnBleApi.setReceiveOrIgnoreStorageData(storageMode);
+            doStopScan();
 
-            QNBleDevice device = devices.get(getAdapterPosition());
-            doConnect(device);
+            final QNBleDevice device = devices.get(getAdapterPosition());
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    doConnect(device);
+                }
+            }, 150);
         }
 
         void init(QNBleDevice device) {

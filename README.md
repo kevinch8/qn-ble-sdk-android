@@ -9,7 +9,9 @@
 
 Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝相关源文件到工程
 
-## 最新版本 `2.7` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/2.7/qn-ble-sdk-android-2.7.zip)
+## 最新版本 `3.0` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.0/qn-ble-sdk-android-3.0.zip)
+
+解决某些手机OPPO N3可能扫描不到设备的bug
 
 优化 **AppId** 验证机制，因为网络不通而校验失败不会影响使用
 
