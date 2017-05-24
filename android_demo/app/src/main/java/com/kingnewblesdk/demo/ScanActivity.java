@@ -1,5 +1,6 @@
 package com.kingnewblesdk.demo;
 
+import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -52,6 +53,9 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
         initViews();
         initApi();
 
+//        QNUser user = this.buildUser();
+//        QNBleDevice qnBleDevice = new QNBleDevice(BluetoothAdapter.getDefaultAdapter().getRemoteDevice("FA:E5:83:E4:07:1F"));
+//        startActivity(ConnectActivity.getCallIntent(this, user, qnBleDevice));
     }
 
 
@@ -271,6 +275,8 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
             doStopScan();
 
             final QNBleDevice device = devices.get(getAdapterPosition());
+
+            //停止扫描后，最后延时一会儿再做连接操作
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -280,7 +286,7 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         void init(QNBleDevice device) {
-            nameTv.setText(device.getModel() + (device.getDeviceState() == QNBleDevice.DEVICE_STATE_ON ? "开机" : "关机"));
+            nameTv.setText(device.getModel() + "  " + (device.getDeviceState() == QNBleDevice.DEVICE_STATE_ON ? "开机" : "关机"));
             macTv.setText(device.getMac());
         }
     }
