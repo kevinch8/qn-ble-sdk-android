@@ -9,7 +9,7 @@
 
 Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝相关源文件到工程
 
-## 最新版本 `3.1.1` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.1/qn-ble-sdk-android-3.1.1.zip)
+## 最新版本 `3.1.1` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.1.1/qn-ble-sdk-android-3.1.1.zip)
 
 * 解决某些机型（比如OPPO N3）在没试别到型号情况下可能闪退的bug
 * 提供QNBleDevice 仅需 BluetoothDevice的构造方法，SDK接入商更方便自己实现蓝牙扫描过程
