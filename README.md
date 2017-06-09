@@ -9,11 +9,11 @@
 
 Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝相关源文件到工程
 
-## 最新版本 `3.2` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.2/qn-ble-sdk-android-3.2.zip)
+## 最新版本 `3.3` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.3/qn-ble-sdk-android-3.3.zip)
 
-* 把脂肪率的有效范围提高至 75%
-* 解决某些机型（比如OPPO N3）在没试别到型号情况下可能闪退的bug
-* 提供QNBleDevice 仅需 BluetoothDevice的构造方法，SDK接入商更方便自己实现蓝牙扫描过程
+* 把体脂率的调整为跟轻牛APP一样的上限 **70%**
+* 解决存储数据出现的时间错误
+* 优化so结构，**此次版本更新需要替换so文件**
 
 [所有版本](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases)
 
