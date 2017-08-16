@@ -9,8 +9,13 @@
 
 Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝相关源文件到工程
 
-## 最新版本 `3.4.1` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.4.1/qn-ble-sdk-android-3.4.1.zip)
+## 最新版本 `3.5` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.5/qn-ble-sdk-android-3.5.zip)
 
+
+* 提高体脂算法的稳定性
+* 增加更多型号
+
+### 近期更新
 * 增加了一些秤的型号
 * 增加了QNBleDevice 新的构造方法，可以传入蓝牙扫描结果数据。方便接入者使用自定义扫描
 * 解决了几个可能导致闪退的bug
