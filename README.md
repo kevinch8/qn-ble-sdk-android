@@ -165,6 +165,12 @@ int QN_BLE_CLOSED = 7;
 int QN_BLE_LOW_SDK_VERSION = 8;
 ```
 
+### 混淆配置
+
+打正式包时，在混淆配置文件中，加上以下配置
+
+-keep public class com.kingnew.health.measure.calc.MeasuredDataCalc {*;}
+
 ## 注意事项
 
 * 测试版 APPID：123456789，测试版版本的服务器可能会不稳定
