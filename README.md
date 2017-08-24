@@ -169,7 +169,7 @@ int QN_BLE_LOW_SDK_VERSION = 8;
 
 打正式包时，在混淆配置文件中，加上以下配置
 
--keep public class com.kingnew.health.measure.calc.MeasuredDataCalc {*;}
+-keep public class com.kitnew.ble.QNCalc {*;}
 
 ## 注意事项
 
