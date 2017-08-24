@@ -7,7 +7,7 @@ If you need IOS version, please click [here](https://github.com/YolandaQingniu/q
 
 Android Studio project, please build new project and copy the related source files into it if you need use Eclipse
 
-## The newest version `3.0` [please download here](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.0/qn-ble-sdk-android-3.0.zip)
+## The newest version `3.5` [please download here](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.5/qn-ble-sdk-android-3.5.zip)
 
 Support set weight unit(kg,lb,jin)
 
@@ -60,7 +60,7 @@ float convertUnit(int weightUnit, float kgWeight);
 
 [All version](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases)
 
-##Integration manual
+## Integration manual
 
 1. After importing the "Demo" into the "AS", please copy the latest SDK jar package and so file on to the lib directory
   * The jar package file is named qn-ble-api-x.x.jar
@@ -203,6 +203,12 @@ int QN_BLE_CLOSED = 7;
  */
 int QN_BLE_LOW_SDK_VERSION = 8;
 ```
+
+## proguard-rules
+
+-keep public class com.kitnew.ble.QNCalc {*;}
+
+
 
 ## please note:
 
