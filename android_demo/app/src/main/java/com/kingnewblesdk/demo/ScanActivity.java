@@ -1,7 +1,7 @@
 package com.kingnewblesdk.demo;
 
-import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -12,10 +12,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.*;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.hdr.yolanda.kingnewblesdk.app.R;
-import com.kitnew.ble.*;
+import com.kitnew.ble.QNApiManager;
+import com.kitnew.ble.QNBleApi;
+import com.kitnew.ble.QNBleDevice;
+import com.kitnew.ble.QNBleScanCallback;
+import com.kitnew.ble.QNUser;
 import com.kitnew.ble.utils.QNLog;
 
 import java.text.SimpleDateFormat;
@@ -34,6 +43,7 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
     Button scanBtn;
     RadioGroup sexRg;
     RadioGroup scanModeRg;
+    RadioGroup steadyEnableRg;
     RadioGroup unitRg;
     EditText idEt;
     EditText heightEt;
@@ -74,6 +84,7 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
 
         sexRg = (RadioGroup) findViewById(R.id.sexRG);
         scanModeRg = (RadioGroup) findViewById(R.id.scanMode);
+        steadyEnableRg = (RadioGroup) findViewById(R.id.steadyEnable);
 
         unitRg = (RadioGroup) findViewById(R.id.measureUnit);
 
@@ -157,6 +168,8 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
         int scanMode = scanModeRg.getCheckedRadioButtonId() == R.id.scanModeFirst ? QNBleApi.SCAN_MODE_FIRST : QNBleApi.SCAN_MODE_ALL;
         //设置扫描模式，如无特殊需要，不需要设置
         qnBleApi.setScanMode(scanMode);
+        boolean isEnable = steadyEnableRg.getCheckedRadioButtonId() == R.id.steadyOpen ? true : false;
+        qnBleApi.setSteadyBodyfat(isEnable);
         qnBleApi.startLeScan(null, null, new QNBleScanCallback() {
             @Override
             public void onCompete(int errorCode) {

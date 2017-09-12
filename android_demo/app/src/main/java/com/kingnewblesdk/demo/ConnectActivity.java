@@ -114,7 +114,7 @@ public class ConnectActivity extends AppCompatActivity implements QNBleCallback 
     }
 
     @Override
-    public void onDisconnected(QNBleDevice bleDevice) {
+    public void onDisconnected(QNBleDevice bleDevice, int status) {
         statusTv.setText("连接已断开");
         connectBtn.setText("连接");
     }

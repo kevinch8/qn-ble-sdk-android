@@ -151,10 +151,48 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/infoBar4"
+        android:id="@+id/infoBar_steady"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/infoBar3"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="是否开启体脂率稳定算法" />
+
+        <RadioGroup
+            android:id="@+id/steadyEnable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/steadyOpen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="开启" />
+
+            <RadioButton
+                android:id="@+id/steadyClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="关闭" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/infoBar4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/infoBar_steady"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingEnd="10dp"
