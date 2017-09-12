@@ -9,17 +9,16 @@
 
 Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝相关源文件到工程
 
-## 最新版本 `3.5` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.5/qn-ble-sdk-android-3.5.zip)
+## 最新版本 `3.6.1` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.6.1/qn-ble-sdk-android-3.6.1.zip)
 
 
-* 提高体脂算法的稳定性
+* 增加体脂率稳定算法开关
+* 增加蓝牙连接断开时，回调蓝牙状态
 * 增加更多型号
 
 ### 近期更新
-* 增加了一些秤的型号
-* 增加了QNBleDevice 新的构造方法，可以传入蓝牙扫描结果数据。方便接入者使用自定义扫描
-* 解决了几个可能导致闪退的bug
-* 解决3.4版本，计算体型错误的bug
+* 提高体脂算法的稳定性
+* 增加更多型号
 
 [所有版本](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases)
 
@@ -94,8 +93,9 @@ QNApiManager.getApi(this).connectDevice(device, "userId", 170, 1, birthday, new 
      * 断开了蓝牙连接 在主线程中回调
      *
      * @param bleDevice 轻牛蓝牙设备
+     * @param status 蓝牙连接状态
      */
-    void onDisconnected(QNBleDevice bleDevice);
+    void onDisconnected(QNBleDevice bleDevice,int status);
 
     /**
      * 收到了不稳定的体重数据，在称重前期会不断被调用 在主线程中回调

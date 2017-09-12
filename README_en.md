@@ -7,7 +7,7 @@ If you need IOS version, please click [here](https://github.com/YolandaQingniu/q
 
 Android Studio project, please build new project and copy the related source files into it if you need use Eclipse
 
-## The newest version `3.5` [please download here](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.5/qn-ble-sdk-android-3.5.zip)
+## The newest version `3.6.1` [please download here](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.6.1/qn-ble-sdk-android-3.6.1.zip)
 
 Support set weight unit(kg,lb,jin)
 
@@ -133,8 +133,9 @@ QNApiManager.getApi(this).connectDevice(device, "userId", 170, 1, birthday, new 
 	 Disconnected from the Bluetooth connection,it will callback in the main thread
      *
      * @param bleDevice  Yolanda Bluetooth device
+     * @param status  Yolanda Bluetooth status
      */
-    void onDisconnected(QNBleDevice bleDevice);
+    void onDisconnected(QNBleDevice bleDevice,int status);
 
     /**
      * Received an unstable weight data, it will continue to be called during user starting weighing, and will callback in the main thread
