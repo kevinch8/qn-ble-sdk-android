@@ -7,7 +7,7 @@ If you need IOS version, please click [here](https://github.com/YolandaQingniu/q
 
 Android Studio project, please build new project and copy the related source files into it if you need use Eclipse
 
-## The newest version `3.6.1` [please download here](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.6.1/qn-ble-sdk-android-3.6.1.zip)
+## The newest version `3.7` [please download here](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.7/qn-ble-sdk-android-3.7.zip)
 
 Support set weight unit(kg,lb,jin)
 
@@ -160,6 +160,11 @@ QNApiManager.getApi(this).connectDevice(device, "userId", 170, 1, birthday, new 
      * @param datas     The stored data array(it contains multiple array),you can use {@link QNData#getUserId()} to distinguish different user's data
      */
     void onReceivedStoreData(QNBleDevice bleDevice, List<QNData> datas);
+
+    /**
+     * The battery power of the terminal battery is low, and the connection is only called once
+     */
+    void onLowPower();
 });
 ```
 

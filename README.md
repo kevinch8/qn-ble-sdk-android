@@ -9,15 +9,16 @@
 
 Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝相关源文件到工程
 
-## 最新版本 `3.6.1` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.6.1/qn-ble-sdk-android-3.6.1.zip)
+## 最新版本 `3.7` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.7/qn-ble-sdk-android-3.7.zip)
 
 
-* 增加体脂率稳定算法开关
-* 增加蓝牙连接断开时，回调蓝牙状态
+* 增加称端低电量回调
+* 更新算法库，优化算法
 * 增加更多型号
 
 ### 近期更新
-* 提高体脂算法的稳定性
+* 增加体脂率稳定算法开关
+* 增加蓝牙连接断开时，回调蓝牙状态
 * 增加更多型号
 
 [所有版本](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases)
@@ -120,6 +121,12 @@ QNApiManager.getApi(this).connectDevice(device, "userId", 170, 1, birthday, new 
      * @param datas     存储数据数组（包含多个），可用{@link QNData#getUserId()}判断是哪个用户的数据
      */
     void onReceivedStoreData(QNBleDevice bleDevice, List<QNData> datas);
+
+    /**
+     * 称端电池电量过低时回调，每次连接只调用一次
+     *
+     */
+    void onLowPower();
 });
 ```
 
