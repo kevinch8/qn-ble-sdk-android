@@ -146,6 +146,11 @@ public class ConnectActivity extends AppCompatActivity implements QNBleCallback 
         Log.d("hdr", "读取到了新的型号：" + bleDevice.getModel());
     }
 
+    @Override
+    public void onLowPower() {
+        Log.d("hdr", "电池电量低");
+    }
+
 
     @Override
     public void onCompete(int errorCode) {
