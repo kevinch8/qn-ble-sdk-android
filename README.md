@@ -9,7 +9,7 @@
 
 Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝相关源文件到工程
 
-## 最新版本 `3.7` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.7/qn-ble-sdk-android-3.7.zip)
+## 最新版本 `3.8` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.8/qn-ble-sdk-android-3.8.zip)
 
 
 * 增加称端低电量回调
@@ -35,10 +35,9 @@ Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝
  * 初始化轻牛SDK,仅在Application中的 onCreate中调用，保证每次app实例都只调用一次。调用这个方法时，尽量要联网
  *
  * @param  AppId 由轻牛所分配的 appId
- * @param  isRelease 是否为开发模式，开发时清设置 false，上线时需要设置为true
  * @param  callback 执行结果的回调,轻牛会尽量保证各种情况都会进行回调
  */
- QNApiManager.getApi(getApplicationContext()).initSDK("123456789", false, new QNResultCallback() {
+ QNApiManager.getApi(getApplicationContext()).initSDK("123456789", new QNResultCallback() {
       @Override
       public void onCompete(int errorCode) {
           //执行结果，为0则成功，其它则参考api文档的种的错误码
@@ -180,10 +179,8 @@ int QN_BLE_LOW_SDK_VERSION = 8;
 
 ## 注意事项
 
-* 测试版 APPID：123456789，测试版版本的服务器可能会不稳定
-* 使用 **测试版APPID** 调试成功后，请切换到 **发布** 模式，并使用 **正式的APPID** 上线
+* 使用 **测试版APPID** 调试成功后，请使用 **正式的APPID** 上线
 * **正式的APPID** 由轻牛公司统一分配
-* SDK中有方法可以指定测试或发布模式
 
 ===================================================
 

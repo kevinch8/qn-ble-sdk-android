@@ -7,7 +7,7 @@ If you need IOS version, please click [here](https://github.com/YolandaQingniu/q
 
 Android Studio project, please build new project and copy the related source files into it if you need use Eclipse
 
-## The newest version `3.7` [please download here](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.7/qn-ble-sdk-android-3.7.zip)
+## The newest version `3.8` [please download here](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.8/qn-ble-sdk-android-3.8.zip)
 
 Support set weight unit(kg,lb,jin)
 
@@ -72,10 +72,9 @@ float convertUnit(int weightUnit, float kgWeight);
  * Please only call "onCreate" for just one time in Application under Internet work when Initialize the Yolanda SDK
  *
  * @param  AppId appId assigned by Yolanda
- * @param  isRelease ：Whether it is release mode, if yes please setting false, and setting to true when on line
  * @param  callback ： Callback execution results, yolanda will try to ensure that all cases will be a callback
  */
- QNApiManager.getApi(getApplicationContext()).initSDK("123456789", false, new QNResultCallback() {
+ QNApiManager.getApi(getApplicationContext()).initSDK("123456789", new QNResultCallback() {
       @Override
       public void onCompete(int errorCode) {
           //Callback results,0 means success, otherwise please check all kinds of error codes in the api documentation
@@ -218,10 +217,8 @@ int QN_BLE_LOW_SDK_VERSION = 8;
 
 ## please note:
 
-* Testing version APPID：123456789 , the testing ver server may be unstable during testing
-* After Use **testing version APPID** debugging successfully, please switch to **release** mode and use **formal APPID** make on line
+* After Use **testing version APPID** debugging successfully, please use **formal APPID** make on line
 * **Formal APPID** is distributed by yolanda company
-* you can choose a test or release mode in SDK
 
 ===================================================
 
