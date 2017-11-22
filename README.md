@@ -9,7 +9,7 @@
 
 Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝相关源文件到工程
 
-## 最新版本 `3.8` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.8/qn-ble-sdk-android-3.8.zip)
+## 最新版本 `3.9` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.9/qn-ble-sdk-android-3.9.zip)
 
 
 * 增加称端低电量回调
