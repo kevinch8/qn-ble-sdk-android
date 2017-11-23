@@ -12,14 +12,14 @@ Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝
 ## 最新版本 `3.9` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.9/qn-ble-sdk-android-3.9.zip)
 
 
-* 增加称端低电量回调
-* 更新算法库，优化算法
-* 增加更多型号
+* 增加测量过程中修改用户资料的方法
+* 修改启动扫描逻辑，任何情况下调用开启扫描都会开始扫描设备
+* 增加更多设备支持
 
 ### 近期更新
-* 增加体脂率稳定算法开关
-* 增加蓝牙连接断开时，回调蓝牙状态
-* 增加更多型号
+* 移除测试版SDK的限制
+* 兼容新款型号的设备
+* 增加更多设备支持
 
 [所有版本](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases)
 

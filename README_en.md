@@ -35,7 +35,7 @@ int WEIGHT_UNIT_JIN = 2;
  * set weight unit ,include all value which use weight unit,like weight
  *
  * <p>
- * Scale will show kg on some old device does not support  <strong> jin </strong>
+ * Scale will show kg on some old device does not support . <strong> jin </strong>
  * </p>
  *
  * @param unit ref {@link #WEIGHT_UNIT_KG} ,{@link #WEIGHT_UNIT_LB} ,{@link #WEIGHT_UNIT_JIN}
