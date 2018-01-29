@@ -9,7 +9,7 @@
 
 Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝相关源文件到工程
 
-## 最新版本 `3.9` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.9/qn-ble-sdk-android-3.9.zip)
+## 最新版本 `3.11` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.11/qn-ble-sdk-android-3.11.zip)
 
 
 * 增加测量过程中修改用户资料的方法
