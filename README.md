@@ -9,16 +9,13 @@
 
 Android Studio 工程，如需要使用Eclipse 请自行新建工程，并拷贝相关源文件到工程
 
-## 最新版本 `3.11` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.11/qn-ble-sdk-android-3.11.zip)
+## 最新版本 `3.11.1` [下载地址](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.11.1/qn-ble-sdk-android-3.11.1.zip)
 
-
-* 增加测量过程中修改用户资料的方法
-* 修改启动扫描逻辑，任何情况下调用开启扫描都会开始扫描设备
 * 增加更多设备支持
 
 ### 近期更新
-* 移除测试版SDK的限制
-* 兼容新款型号的设备
+* 增加测量过程中修改用户资料的方法
+* 修改启动扫描逻辑，任何情况下调用开启扫描都会开始扫描设备
 * 增加更多设备支持
 
 [所有版本](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases)
