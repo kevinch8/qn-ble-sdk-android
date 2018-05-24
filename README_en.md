@@ -7,7 +7,7 @@ If you need IOS version, please click [here](https://github.com/YolandaQingniu/q
 
 Android Studio project, please build new project and copy the related source files into it if you need use Eclipse
 
-## The newest version `3.11.1` [please download here](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.11.1/qn-ble-sdk-android-3.11.1.zip)
+## The newest version `3.11.2` [please download here](https://github.com/YolandaQingniu/qn-ble-sdk-android/releases/download/3.11.2/qn-ble-sdk-android-3.11.2.zip)
 
 Support set weight unit(kg,lb,jin)
 
